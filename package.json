@@ -1,0 +1,28 @@
+{
+  "name": "reversi-schumacher",
+  "version": "0.0.1",
+  "description": "This is a web version of the game reversi",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aschu51/reversi-schumacher.git"
+  },
+  "keywords": [
+    "reversi",
+    "schumacher",
+    "hcid"
+  ],
+  "author": "Alex Schumacher",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/aschu51/reversi-schumacher/issues"
+  },
+  "homepage": "https://github.com/aschu51/reversi-schumacher#readme",
+  "dependencies": {
+    "node-static": "^0.7.11",
+    "socket.io": "^4.0.2"
+  }
+}
