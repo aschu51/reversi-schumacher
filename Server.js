@@ -28,4 +28,4 @@ let app = http.createServer(
   }
 ).listen(port);
 
-console.log('The server is running great!');
+console.log('The server is running great');
