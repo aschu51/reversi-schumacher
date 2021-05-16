@@ -17,3 +17,8 @@ if ((typeof username == 'undefiend') || (username === null)){
 }
 
 $('#messages').prepend('<b>'+username+':</b>');
+
+let socket = io();
+socket.on('log', function(array) {
+  console.log.apply(console,array);
+});
