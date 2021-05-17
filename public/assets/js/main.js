@@ -12,7 +12,7 @@ function getIRIParameterValue(requestedKey){
 }
 
 let username = decodeURI(getIRIParameterValue('username'));
-if ((typeof username == 'undefiend') || (username === null)){
+if ((typeof username == 'undefined') || (username === null)){
      username = "Anonymous_"+Math.floor(Math.random()*1000);
 }
 
@@ -23,6 +23,19 @@ let socket = io();
 socket.on('log', function(array) {
   console.log.apply(console,array);
 });
+
+socket.on('join_room_response', (payload) =>{
+  if(( typeof payload == 'undefined') || (payload === null)){
+    console.log('Server did not send a payload');
+    return;
+  }
+  if(payload === 'fail'){
+    console.log(payload.message);
+    return;
+  }
+  let newString = '<p class=\'join_room_response\'>'+payload.username+' joined the '+payload.room+'. (There are '+payload.count+' users in this room)</p>';
+  $('#messages').prepend(newString);
+})
 
 /* Request to join the chat room */
 $( () => {
