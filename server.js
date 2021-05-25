@@ -137,7 +137,6 @@ io.on('connection', (socket) => {
           io.of('/').to(room).emit('join_room_response',response);
           serverLog('join room succeeded ', JSON.stringify(response));
         }
-      }
     });
   });
 
