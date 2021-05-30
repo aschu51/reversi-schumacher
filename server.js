@@ -490,7 +490,7 @@ function send_game_update(socket, game_id, message) {
 
   /* Check to see if a game with a game_id exists */
   if ((typeof games[game_id] == 'undefined') || (games[game_id] === null)) {
-    console.log("No game exists with game_id:"+game_id+". Making a new game for "+Socket.id);
+    console.log("No game exists with game_id:" + game_id + ". Making a new game for " + socket.id);
     games[game_id] = create_new_game();
   }
 
