@@ -1,5 +1,5 @@
-.body {
-  background-color: rbg(50, 50, 50);
+body {
+  background-color: rgb(50, 50, 50);
 }
 
 .headerrow, #messagePane {
