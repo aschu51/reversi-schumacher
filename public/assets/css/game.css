@@ -28,7 +28,5 @@ table#game_board td {
 }
 
 td.hovered_over:hover {
-  background-image: url('/assets/images/hover_three.gif');
-  opacity: 0.9;
-  filter: alpha(opacity=90);
+  background-image: url('/assets/images/hover_two.gif');
 }
