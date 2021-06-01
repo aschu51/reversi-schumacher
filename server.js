@@ -504,13 +504,13 @@ function send_game_update(socket, game_id, message) {
         if((games[games_id].player_white.socket != first) &&
            (games[games_id].player_black.socket != first)) {
            /* Player does not have a color */
-           if((games[games_id].player_white.socket === "") {
+           if(games[games_id].player_white.socket === "") {
              /* This player should be white */
              console.log("White is assigned to: "+first);
              games[games_id].player_white.socket = first;
              games[games_id].player_white.username = players[first].username;
            }
-           else if((games[games_id].player_black.socket === "") {
+           else if(games[games_id].player_black.socket === "") {
              /* This player should be black */
              console.log("Black is assigned to: "+first);
              games[games_id].player_black.socket = first;
@@ -523,19 +523,18 @@ function send_game_update(socket, game_id, message) {
            }
         }
       }
-      const iterator = sockets[Symbol.iterator]();
       if(sockets.size >= 2) {
-        let first = iterator.next().value;
+        let second = iterator.next().value;
         if((games[games_id].player_white.socket != second) &&
            (games[games_id].player_black.socket != second)) {
            /* Player does not have a color */
-           if((games[games_id].player_white.socket === "") {
+           if(games[games_id].player_white.socket === "") {
              /* This player should be white */
              console.log("White is assigned to: "+second);
              games[games_id].player_white.socket = second;
              games[games_id].player_white.username = players[second].username;
            }
-           else if((games[games_id].player_black.socket === "") {
+           else if(games[games_id].player_black.socket === "") {
              /* This player should be black */
              console.log("Black is assigned to: "+second);
              games[games_id].player_black.socket = second;
