@@ -501,20 +501,20 @@ function send_game_update(socket, game_id, message) {
       const iterator = sockets[Symbol.iterator]();
       if(sockets.size >= 1) {
         let first = iterator.next().value;
-        if((games[games_id].player_white.socket != first) &&
-           (games[games_id].player_black.socket != first)) {
+        if((games[game_id].player_white.socket != first) &&
+           (games[game_id].player_black.socket != first)) {
            /* Player does not have a color */
-           if(games[games_id].player_white.socket === "") {
+           if(games[game_id].player_white.socket === "") {
              /* This player should be white */
              console.log("White is assigned to: "+first);
-             games[games_id].player_white.socket = first;
-             games[games_id].player_white.username = players[first].username;
+             games[game_id].player_white.socket = first;
+             games[game_id].player_white.username = players[first].username;
            }
-           else if(games[games_id].player_black.socket === "") {
+           else if(games[game_id].player_black.socket === "") {
              /* This player should be black */
              console.log("Black is assigned to: "+first);
-             games[games_id].player_black.socket = first;
-             games[games_id].player_black.username = players[first].username;
+             games[game_id].player_black.socket = first;
+             games[game_id].player_black.username = players[first].username;
            }
            else {
              /* This player should be kicked out */
@@ -525,20 +525,20 @@ function send_game_update(socket, game_id, message) {
       }
       if(sockets.size >= 2) {
         let second = iterator.next().value;
-        if((games[games_id].player_white.socket != second) &&
-           (games[games_id].player_black.socket != second)) {
+        if((games[game_id].player_white.socket != second) &&
+           (games[game_id].player_black.socket != second)) {
            /* Player does not have a color */
-           if(games[games_id].player_white.socket === "") {
+           if(games[game_id].player_white.socket === "") {
              /* This player should be white */
              console.log("White is assigned to: "+second);
-             games[games_id].player_white.socket = second;
-             games[games_id].player_white.username = players[second].username;
+             games[game_id].player_white.socket = second;
+             games[game_id].player_white.username = players[second].username;
            }
-           else if(games[games_id].player_black.socket === "") {
+           else if(games[game_id].player_black.socket === "") {
              /* This player should be black */
              console.log("Black is assigned to: "+second);
-             games[games_id].player_black.socket = second;
-             games[games_id].player_black.username = players[second].username;
+             games[game_id].player_black.socket = second;
+             games[game_id].player_black.username = players[second].username;
            }
            else {
              /* This player should be kicked out */
