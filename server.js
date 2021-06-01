@@ -496,21 +496,21 @@ function send_game_update(socket, game_id, message) {
 
     /* Make sure that only 2 people are in the room */
     /* Assign this socket a color */
-    io.of('/').to(game_id).allSockets().then((sockets)=> {
+    io.of('/').to(game_id).allSockets().then((sockets) => {
 
       const iterator = sockets[Symbol.iterator]();
-      if(sockets.size >= 1) {
+      if (sockets.size >= 1) {
         let first = iterator.next().value;
-        if((games[game_id].player_white.socket != first) &&
+        if ((games[game_id].player_white.socket != first) &&
            (games[game_id].player_black.socket != first)) {
            /* Player does not have a color */
-           if(games[game_id].player_white.socket === "") {
+           if (games[game_id].player_white.socket === "") {
              /* This player should be white */
              console.log("White is assigned to: "+first);
              games[game_id].player_white.socket = first;
              games[game_id].player_white.username = players[first].username;
            }
-           else if(games[game_id].player_black.socket === "") {
+           else if (games[game_id].player_black.socket === "") {
              /* This player should be black */
              console.log("Black is assigned to: "+first);
              games[game_id].player_black.socket = first;
@@ -523,18 +523,18 @@ function send_game_update(socket, game_id, message) {
            }
         }
       }
-      if(sockets.size >= 2) {
+      if (sockets.size >= 2) {
         let second = iterator.next().value;
-        if((games[game_id].player_white.socket != second) &&
+        if ((games[game_id].player_white.socket != second) &&
            (games[game_id].player_black.socket != second)) {
            /* Player does not have a color */
-           if(games[game_id].player_white.socket === "") {
+           if (games[game_id].player_white.socket === "") {
              /* This player should be white */
              console.log("White is assigned to: "+second);
              games[game_id].player_white.socket = second;
              games[game_id].player_white.username = players[second].username;
            }
-           else if(games[game_id].player_black.socket === "") {
+           else if (games[game_id].player_black.socket === "") {
              /* This player should be black */
              console.log("Black is assigned to: "+second);
              games[game_id].player_black.socket = second;
