@@ -28,5 +28,5 @@ table#game_board td {
 }
 
 td.hovered_over:hover {
-  background-image: url('assets/images/Hover.gif')
+  background-image: url('assets/images/Hover.gif');
 }
