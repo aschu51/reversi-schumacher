@@ -407,7 +407,7 @@ $( () => {
   socket.emit('join_room', request);
 
   $("#lobbyTitle").html(username+"'s Lobby");
-  $('#quit").html("<a href = 'lobby.html?username="+username+"' class = 'btn btn-danger' role = 'button'>Quit</a>");
+  $("#quit").html("<a href = 'lobby.html?username="+username+"' class = 'btn btn-danger' role = 'button'>Quit</a>");
 
   $('#chatMessage').keypress( function (e){
     let key = e.which;
