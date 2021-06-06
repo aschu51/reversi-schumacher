@@ -388,6 +388,7 @@ socket.on('play_token_response', (payload) =>{
   }
   if(payload === 'fail'){
     console.log(payload.message);
+    alert(payload.message);
     return;
   }
 })
