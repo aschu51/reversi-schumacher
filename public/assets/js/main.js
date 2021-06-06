@@ -386,7 +386,7 @@ socket.on('play_token_response', (payload) =>{
     console.log('Server did not send a payload');
     return;
   }
-  if(payload === 'fail'){
+  if(payload.result === 'fail'){
     console.log(payload.message);
     alert(payload.message);
     return;
@@ -400,7 +400,6 @@ socket.on('game_over', (payload) =>{
   }
   if(payload === 'fail'){
     console.log(payload.message);
-    alert(payload.message);
     return;
   }
 
