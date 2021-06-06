@@ -536,15 +536,14 @@ io.on('connection', (socket) => {
     if (
         ((game.whose_turn === 'white') && (game.player_white.socket != socket.id)) ||
         ((game.whose_turn === 'black') && (game.player_black.socket != socket.id))
-       )
-       {
-      let response = {
-        result: 'fail',
-        message: 'play_token played the right color, but by the wrong player'
-      }
-      socket.emit('play_token_response', response);
-      serverLog('play_token command failed', JSON.stringify(response));
-      return;
+    ) {
+        let response = {
+          result: 'fail',
+          message: 'play_token played the right color, but by the wrong player'
+        }
+        socket.emit('play_token_response', response);
+        serverLog('play_token command failed', JSON.stringify(response));
+        return;
     }
 
     let response = {
