@@ -555,10 +555,12 @@ io.on('connection', (socket) => {
     if (color === 'white') {
       game.board[row][column] = 'w';
       game.whose_turn = 'black';
+      game.legal_moves = calculate_legal_moves('b', game.board);
     }
     else if (color === 'black') {
       game.board[row][column] = 'b';
       game.whose_turn = 'white';
+      game.legal_moves = calculate_legal_moves('w', game.board);
     }
 
     send_game_update(socket, game_id, 'played a token');
