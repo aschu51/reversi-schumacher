@@ -378,15 +378,15 @@ socket.on('game_update', (payload) => {
   }
 
   clearInterval(interval_timer)
-  interval_timer = setInterval( ((last_time) => {
-    return ( () => {
+  interval_timer = setInterval(((last_time) => {
+    return (() => {
       let d = new Date();
       let elapsed_m = d.getTime() - last_time;
       let minutes = Math.floor((elapsed_m / 1000) / 60);
       let seconds = Math.floor((elapsed_m % (60 * 1000)) / 1000);
       let total = minutes * 60 + seconds;
       let timestring = ""+seconds;
-      timestring = timestring.payload(2, '0');
+      timestring = timestring.padStart(2, '0');
       timestring = minutes+":"+timestring;
       if (total > 100) {
         $("#elapsed").html("Times Up!");
